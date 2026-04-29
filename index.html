@@ -975,7 +975,13 @@
     }
 
     async function resolveApiBase() {
-      if (location.protocol !== "file:") {
+      const shouldUseLocalService =
+        location.protocol === "file:" ||
+        location.hostname.endsWith("github.io") ||
+        location.hostname === "localhost" ||
+        location.hostname === "127.0.0.1";
+
+      if (!shouldUseLocalService) {
         setServiceStatus(true, `已连接：${API_BASE}`);
         return API_BASE;
       }
