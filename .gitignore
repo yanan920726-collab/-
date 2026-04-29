@@ -1,0 +1,17 @@
+.DS_Store
+.venv/
+.cache/
+.tmp/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Local download outputs
+../下载的小说/
+downloads/
+下载的小说/
+
+# Local editor files
+.idea/
+.vscode/
